@@ -1,5 +1,5 @@
 import "./App.css";
-import Board from "./Square";
+import Board from "./Board";
 
 const App = () => {
   return (
