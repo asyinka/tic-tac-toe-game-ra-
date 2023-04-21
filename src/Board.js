@@ -6,7 +6,7 @@ const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   //this holds the state of the squares and update only the first colum to 'X'
   function handleClick(i) {
-    if (squares[i]) {
+    if (squares[i] || checkWinner(squares)) {
       return;
     }
 
@@ -38,5 +38,27 @@ const Board = () => {
     </div>
   );
 };
+
+function checkWinner(squares) {
+  let lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  for (let i = 0; i < checkWinner.length; i++) {
+    const [a, b, c] = lines[i];
+
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+}
 
 export default Board;
