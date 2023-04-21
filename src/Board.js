@@ -6,6 +6,10 @@ const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   //this holds the state of the squares and update only the first colum to 'X'
   function handleClick(i) {
+    if (squares[i]) {
+      return;
+    }
+
     const nextSquare = squares.slice();
 
     if (xIsNext) {
