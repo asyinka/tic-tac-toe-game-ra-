@@ -5,6 +5,15 @@ const Board = () => {
   const [xIsNext, setXisNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
   //this holds the state of the squares and update only the first colum to 'X'
+
+  const winner = checkWinner(squares);
+  let statusText;
+  if (winner) {
+    statusText = `Winner: ${winner}`;
+  } else {
+    statusText = `Next player is: ${xIsNext ? "X" : "O"}`;
+  }
+
   function handleClick(i) {
     if (squares[i] || checkWinner(squares)) {
       return;
@@ -25,17 +34,20 @@ const Board = () => {
   squares.slice();
 
   return (
-    <div className="buttons-wrapper">
-      <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-      <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-      <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-      <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-      <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-      <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-      <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-      <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-      <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-    </div>
+    <>
+      <div className="status">{statusText}</div>
+      <div className="buttons-wrapper">
+        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+    </>
   );
 };
 

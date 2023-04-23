@@ -27,4 +27,6 @@ h1 {
   width: fit-content;
   padding: 20px;
 }
-
+.status {
+  margin-bottom: 10px;
+}
