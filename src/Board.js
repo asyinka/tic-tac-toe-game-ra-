@@ -1,9 +1,8 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Square from "./Square";
 
-const Board = () => {
-  const [xIsNext, setXisNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
+const Board = ({ xIsNext, squares, onPlay }) => {
+  // const [squares, setSquares] = useState(Array(9).fill(null));
   //this holds the state of the squares and update only the first colum to 'X'
 
   const winner = checkWinner(squares);
@@ -27,8 +26,7 @@ const Board = () => {
       nextSquare[i] = "O";
     }
 
-    setSquares(nextSquare);
-    setXisNext(!xIsNext);
+    onPlay(nextSquare);
   }
 
   squares.slice();
