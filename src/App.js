@@ -1,11 +1,11 @@
 import "./App.css";
-import Board from "./Board";
+import Game from "./Game";
 
 const App = () => {
   return (
     <div className="App">
       <h1>Next Player: </h1>
-      <Board></Board>
+      <Game />
     </div>
   );
 };
