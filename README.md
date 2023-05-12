@@ -20,4 +20,4 @@ The page will reload when you make changes.\
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-**N.B: This project wa strictly built using the React tutorial/guide found at** <a href="https://react.dev/learn/tutorial-tic-tac-toe">REACT-LEARN</a>
+**N.B: This project waS strictly built using the React tutorial/guide found at** <a href="https://react.dev/learn/tutorial-tic-tac-toe">REACT-LEARN</a>
